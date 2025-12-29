@@ -1,7 +1,7 @@
 # Contributing
 
 ## Issues
-Currently, we are using the following [Asana Board](https://app.asana.com/0/1201441776830592/board) to manage issues and workflow.
+Currently, we are using [Github Issues](https://github.com/cluo-dev/cluo/issues) to manage issues and workflow.
 
 ## Tooling
 This project uses the following tooling:  
