@@ -1,6 +1,5 @@
 from cluo.core import ErrorHandlingMethod, Record, Stage
 from cluo.utils.hashing import hash_nested_primitive
-from cluo.utils.streamsets_hashing import make_hashes as make_streamsets_hashes
 
 
 class ArrayFieldHasherStage(Stage):
@@ -15,7 +14,6 @@ class ArrayFieldHasherStage(Stage):
         hash_nulls: bool = False,
         processes: int = 1,
         error_handling_method: ErrorHandlingMethod = ErrorHandlingMethod.DEFAULT,
-        streamsets_compatible: bool = False,
         expose_metrics: bool = False,
     ) -> None:
         """
@@ -41,7 +39,6 @@ class ArrayFieldHasherStage(Stage):
         self.hash_fields = hash_fields
         self.hash_destination = hash_destination
         self.hash_name_destination = hash_name_destination
-        self.streamsets_compatible = streamsets_compatible
         self.hash_nulls = hash_nulls
 
     def _make_hash_names(self, record: Record) -> list[str]:
@@ -54,20 +51,10 @@ class ArrayFieldHasherStage(Stage):
 
     def _make_hashes(self, record: Record) -> list[str | None]:
         hashes: list[str | None] = []
-        # generate streamsets hashes with nulls
-        # we will only pull out the ones we want
-        streamsets_hashes: list[str | None] = (
-            make_streamsets_hashes(record, self.hash_fields, allow_nulls=True)
-            if self.streamsets_compatible
-            else []
-        )
         for hash_index, single_hash_fields in enumerate(self.hash_fields):
             inputs_ = [record.data[field] for field in single_hash_fields]
             if self.hash_nulls or None not in inputs_:
-                if self.streamsets_compatible:
-                    hashes.append(streamsets_hashes[hash_index])
-                else:
-                    hashes.append(hash_nested_primitive(inputs_))
+                hashes.append(hash_nested_primitive(inputs_))
         return hashes
 
     def process_record(self, record: Record) -> Record:

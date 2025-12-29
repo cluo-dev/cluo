@@ -81,9 +81,6 @@
 
             </li>
             <li>
-                    <a class="variable" href="#RedisKeyError">RedisKeyError</a>
-            </li>
-            <li>
                     <a class="class" href="#SalesforceConnectionMixin">SalesforceConnectionMixin</a>
                             <ul class="memberlist">
                         <li>
@@ -116,19 +113,18 @@
 
                         <label class="view-source-button" for="mod-connections-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="kn">from</span> <span class="nn">.postgres_connection_mixin</span> <span class="kn">import</span> <span class="n">PostgresConnectionMixin</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">from</span> <span class="nn">.postgres_connection_pool</span> <span class="kn">import</span> <span class="n">PostgresConnectionPool</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="kn">from</span> <span class="nn">.redis_connection</span> <span class="kn">import</span> <span class="n">RedisClient</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">.salesforce_connection_mixin</span> <span class="kn">import</span> <span class="n">SalesforceConnectionMixin</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.postgres_connection_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">PostgresConnectionMixin</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.postgres_connection_pool</span><span class="w"> </span><span class="kn">import</span> <span class="n">PostgresConnectionPool</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.redis_connection</span><span class="w"> </span><span class="kn">import</span> <span class="n">RedisClient</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.salesforce_connection_mixin</span><span class="w"> </span><span class="kn">import</span> <span class="n">SalesforceConnectionMixin</span>
 </span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>
 </span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 </span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a>    <span class="s2">&quot;PostgresConnectionMixin&quot;</span><span class="p">,</span>
 </span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>    <span class="s2">&quot;PostgresConnectionPool&quot;</span><span class="p">,</span>
 </span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="s2">&quot;RedisClient&quot;</span><span class="p">,</span>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="s2">&quot;RedisKeyError&quot;</span><span class="p">,</span>
-</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="s2">&quot;SalesforceConnectionMixin&quot;</span><span class="p">,</span>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>    <span class="s2">&quot;config&quot;</span><span class="p">,</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="p">]</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="s2">&quot;SalesforceConnectionMixin&quot;</span><span class="p">,</span>
+</span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>    <span class="s2">&quot;config&quot;</span><span class="p">,</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="p">]</span>
 </span></pre></div>
 
 
@@ -144,10 +140,10 @@
 
     </div>
     <a class="headerlink" href="#PostgresConnectionMixin"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionMixin-8"><a href="#PostgresConnectionMixin-8"><span class="linenos"> 8</span></a><span class="k">class</span> <span class="nc">PostgresConnectionMixin</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionMixin-8"><a href="#PostgresConnectionMixin-8"><span class="linenos"> 8</span></a><span class="k">class</span><span class="w"> </span><span class="nc">PostgresConnectionMixin</span><span class="p">:</span>
 </span><span id="PostgresConnectionMixin-9"><a href="#PostgresConnectionMixin-9"><span class="linenos"> 9</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Mixin class for providing acceess to a Postgres database via `psycopg2` and `sqlalchemy`.&quot;&quot;&quot;</span>
 </span><span id="PostgresConnectionMixin-10"><a href="#PostgresConnectionMixin-10"><span class="linenos">10</span></a>
-</span><span id="PostgresConnectionMixin-11"><a href="#PostgresConnectionMixin-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="PostgresConnectionMixin-11"><a href="#PostgresConnectionMixin-11"><span class="linenos">11</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresConnectionMixin-12"><a href="#PostgresConnectionMixin-12"><span class="linenos">12</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresConnectionMixin-13"><a href="#PostgresConnectionMixin-13"><span class="linenos">13</span></a>        <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="PostgresConnectionMixin-14"><a href="#PostgresConnectionMixin-14"><span class="linenos">14</span></a>        <span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -170,7 +166,7 @@
 </span><span id="PostgresConnectionMixin-31"><a href="#PostgresConnectionMixin-31"><span class="linenos">31</span></a>        <span class="p">)</span>
 </span><span id="PostgresConnectionMixin-32"><a href="#PostgresConnectionMixin-32"><span class="linenos">32</span></a>
 </span><span id="PostgresConnectionMixin-33"><a href="#PostgresConnectionMixin-33"><span class="linenos">33</span></a>    <span class="nd">@cached_property</span>
-</span><span id="PostgresConnectionMixin-34"><a href="#PostgresConnectionMixin-34"><span class="linenos">34</span></a>    <span class="k">def</span> <span class="nf">connection</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">extensions</span><span class="o">.</span><span class="n">connection</span><span class="p">:</span>
+</span><span id="PostgresConnectionMixin-34"><a href="#PostgresConnectionMixin-34"><span class="linenos">34</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">connection</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">extensions</span><span class="o">.</span><span class="n">connection</span><span class="p">:</span>
 </span><span id="PostgresConnectionMixin-35"><a href="#PostgresConnectionMixin-35"><span class="linenos">35</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;psycopg2 connection object. Generated on first access, then cached.&quot;&quot;&quot;</span>
 </span><span id="PostgresConnectionMixin-36"><a href="#PostgresConnectionMixin-36"><span class="linenos">36</span></a>        <span class="k">return</span> <span class="n">psycopg2</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span>
 </span><span id="PostgresConnectionMixin-37"><a href="#PostgresConnectionMixin-37"><span class="linenos">37</span></a>            <span class="n">dbname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dbname</span><span class="p">,</span>
@@ -181,13 +177,13 @@
 </span><span id="PostgresConnectionMixin-42"><a href="#PostgresConnectionMixin-42"><span class="linenos">42</span></a>        <span class="p">)</span>
 </span><span id="PostgresConnectionMixin-43"><a href="#PostgresConnectionMixin-43"><span class="linenos">43</span></a>
 </span><span id="PostgresConnectionMixin-44"><a href="#PostgresConnectionMixin-44"><span class="linenos">44</span></a>    <span class="nd">@cached_property</span>
-</span><span id="PostgresConnectionMixin-45"><a href="#PostgresConnectionMixin-45"><span class="linenos">45</span></a>    <span class="k">def</span> <span class="nf">sql_alchemy_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">Engine</span><span class="p">:</span>
+</span><span id="PostgresConnectionMixin-45"><a href="#PostgresConnectionMixin-45"><span class="linenos">45</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">sql_alchemy_engine</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">engine</span><span class="o">.</span><span class="n">Engine</span><span class="p">:</span>
 </span><span id="PostgresConnectionMixin-46"><a href="#PostgresConnectionMixin-46"><span class="linenos">46</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;sqlalchemy engine. Generated on first access, then cached.&quot;&quot;&quot;</span>
 </span><span id="PostgresConnectionMixin-47"><a href="#PostgresConnectionMixin-47"><span class="linenos">47</span></a>        <span class="k">return</span> <span class="n">sqlalchemy</span><span class="o">.</span><span class="n">create_engine</span><span class="p">(</span>
 </span><span id="PostgresConnectionMixin-48"><a href="#PostgresConnectionMixin-48"><span class="linenos">48</span></a>            <span class="s2">&quot;postgresql://&quot;</span><span class="p">,</span> <span class="n">creator</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">connection</span>
 </span><span id="PostgresConnectionMixin-49"><a href="#PostgresConnectionMixin-49"><span class="linenos">49</span></a>        <span class="p">)</span>
 </span><span id="PostgresConnectionMixin-50"><a href="#PostgresConnectionMixin-50"><span class="linenos">50</span></a>
-</span><span id="PostgresConnectionMixin-51"><a href="#PostgresConnectionMixin-51"><span class="linenos">51</span></a>    <span class="k">def</span> <span class="nf">_process_args</span><span class="p">(</span>
+</span><span id="PostgresConnectionMixin-51"><a href="#PostgresConnectionMixin-51"><span class="linenos">51</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_process_args</span><span class="p">(</span>
 </span><span id="PostgresConnectionMixin-52"><a href="#PostgresConnectionMixin-52"><span class="linenos">52</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresConnectionMixin-53"><a href="#PostgresConnectionMixin-53"><span class="linenos">53</span></a>        <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="PostgresConnectionMixin-54"><a href="#PostgresConnectionMixin-54"><span class="linenos">54</span></a>        <span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -217,7 +213,7 @@
 
     </div>
     <a class="headerlink" href="#PostgresConnectionMixin.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionMixin.__init__-11"><a href="#PostgresConnectionMixin.__init__-11"><span class="linenos">11</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionMixin.__init__-11"><a href="#PostgresConnectionMixin.__init__-11"><span class="linenos">11</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresConnectionMixin.__init__-12"><a href="#PostgresConnectionMixin.__init__-12"><span class="linenos">12</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresConnectionMixin.__init__-13"><a href="#PostgresConnectionMixin.__init__-13"><span class="linenos">13</span></a>        <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="PostgresConnectionMixin.__init__-14"><a href="#PostgresConnectionMixin.__init__-14"><span class="linenos">14</span></a>        <span class="n">port</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -294,8 +290,8 @@
 
     </div>
     <a class="headerlink" href="#PostgresConnectionPool"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionPool-8"><a href="#PostgresConnectionPool-8"><span class="linenos"> 8</span></a><span class="k">class</span> <span class="nc">PostgresConnectionPool</span><span class="p">(</span><span class="n">ThreadedConnectionPool</span><span class="p">):</span>
-</span><span id="PostgresConnectionPool-9"><a href="#PostgresConnectionPool-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionPool-8"><a href="#PostgresConnectionPool-8"><span class="linenos"> 8</span></a><span class="k">class</span><span class="w"> </span><span class="nc">PostgresConnectionPool</span><span class="p">(</span><span class="n">ThreadedConnectionPool</span><span class="p">):</span>
+</span><span id="PostgresConnectionPool-9"><a href="#PostgresConnectionPool-9"><span class="linenos"> 9</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresConnectionPool-10"><a href="#PostgresConnectionPool-10"><span class="linenos">10</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresConnectionPool-11"><a href="#PostgresConnectionPool-11"><span class="linenos">11</span></a>        <span class="n">minconn</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 </span><span id="PostgresConnectionPool-12"><a href="#PostgresConnectionPool-12"><span class="linenos">12</span></a>        <span class="n">maxconn</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -329,7 +325,7 @@
 </span><span id="PostgresConnectionPool-40"><a href="#PostgresConnectionPool-40"><span class="linenos">40</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">application_name</span> <span class="o">=</span> <span class="n">application_name</span>
 </span><span id="PostgresConnectionPool-41"><a href="#PostgresConnectionPool-41"><span class="linenos">41</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">init</span> <span class="o">=</span> <span class="kc">False</span>
 </span><span id="PostgresConnectionPool-42"><a href="#PostgresConnectionPool-42"><span class="linenos">42</span></a>
-</span><span id="PostgresConnectionPool-43"><a href="#PostgresConnectionPool-43"><span class="linenos">43</span></a>    <span class="k">def</span> <span class="nf">_check_init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="PostgresConnectionPool-43"><a href="#PostgresConnectionPool-43"><span class="linenos">43</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_check_init</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="PostgresConnectionPool-44"><a href="#PostgresConnectionPool-44"><span class="linenos">44</span></a>        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">init</span><span class="p">:</span>
 </span><span id="PostgresConnectionPool-45"><a href="#PostgresConnectionPool-45"><span class="linenos">45</span></a>            <span class="n">ThreadedConnectionPool</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresConnectionPool-46"><a href="#PostgresConnectionPool-46"><span class="linenos">46</span></a>                <span class="bp">self</span><span class="p">,</span>
@@ -344,11 +340,11 @@
 </span><span id="PostgresConnectionPool-55"><a href="#PostgresConnectionPool-55"><span class="linenos">55</span></a>            <span class="p">)</span>
 </span><span id="PostgresConnectionPool-56"><a href="#PostgresConnectionPool-56"><span class="linenos">56</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">init</span> <span class="o">=</span> <span class="kc">True</span>
 </span><span id="PostgresConnectionPool-57"><a href="#PostgresConnectionPool-57"><span class="linenos">57</span></a>
-</span><span id="PostgresConnectionPool-58"><a href="#PostgresConnectionPool-58"><span class="linenos">58</span></a>    <span class="k">def</span> <span class="nf">getconn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">connection</span><span class="p">:</span>
+</span><span id="PostgresConnectionPool-58"><a href="#PostgresConnectionPool-58"><span class="linenos">58</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getconn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">connection</span><span class="p">:</span>
 </span><span id="PostgresConnectionPool-59"><a href="#PostgresConnectionPool-59"><span class="linenos">59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_init</span><span class="p">()</span>
 </span><span id="PostgresConnectionPool-60"><a href="#PostgresConnectionPool-60"><span class="linenos">60</span></a>        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getconn</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 </span><span id="PostgresConnectionPool-61"><a href="#PostgresConnectionPool-61"><span class="linenos">61</span></a>
-</span><span id="PostgresConnectionPool-62"><a href="#PostgresConnectionPool-62"><span class="linenos">62</span></a>    <span class="k">def</span> <span class="nf">putconn</span><span class="p">(</span>
+</span><span id="PostgresConnectionPool-62"><a href="#PostgresConnectionPool-62"><span class="linenos">62</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">putconn</span><span class="p">(</span>
 </span><span id="PostgresConnectionPool-63"><a href="#PostgresConnectionPool-63"><span class="linenos">63</span></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">conn</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="n">close</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 </span><span id="PostgresConnectionPool-64"><a href="#PostgresConnectionPool-64"><span class="linenos">64</span></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="PostgresConnectionPool-65"><a href="#PostgresConnectionPool-65"><span class="linenos">65</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_init</span><span class="p">()</span>
@@ -370,7 +366,7 @@
 
     </div>
     <a class="headerlink" href="#PostgresConnectionPool.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionPool.__init__-9"><a href="#PostgresConnectionPool.__init__-9"><span class="linenos"> 9</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionPool.__init__-9"><a href="#PostgresConnectionPool.__init__-9"><span class="linenos"> 9</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresConnectionPool.__init__-10"><a href="#PostgresConnectionPool.__init__-10"><span class="linenos">10</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresConnectionPool.__init__-11"><a href="#PostgresConnectionPool.__init__-11"><span class="linenos">11</span></a>        <span class="n">minconn</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
 </span><span id="PostgresConnectionPool.__init__-12"><a href="#PostgresConnectionPool.__init__-12"><span class="linenos">12</span></a>        <span class="n">maxconn</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -435,7 +431,7 @@
 
     </div>
     <a class="headerlink" href="#PostgresConnectionPool.getconn"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionPool.getconn-58"><a href="#PostgresConnectionPool.getconn-58"><span class="linenos">58</span></a>    <span class="k">def</span> <span class="nf">getconn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">connection</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionPool.getconn-58"><a href="#PostgresConnectionPool.getconn-58"><span class="linenos">58</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">getconn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">connection</span><span class="p">:</span>
 </span><span id="PostgresConnectionPool.getconn-59"><a href="#PostgresConnectionPool.getconn-59"><span class="linenos">59</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_init</span><span class="p">()</span>
 </span><span id="PostgresConnectionPool.getconn-60"><a href="#PostgresConnectionPool.getconn-60"><span class="linenos">60</span></a>        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">getconn</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 </span></pre></div>
@@ -457,7 +453,7 @@
 
     </div>
     <a class="headerlink" href="#PostgresConnectionPool.putconn"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionPool.putconn-62"><a href="#PostgresConnectionPool.putconn-62"><span class="linenos">62</span></a>    <span class="k">def</span> <span class="nf">putconn</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresConnectionPool.putconn-62"><a href="#PostgresConnectionPool.putconn-62"><span class="linenos">62</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">putconn</span><span class="p">(</span>
 </span><span id="PostgresConnectionPool.putconn-63"><a href="#PostgresConnectionPool.putconn-63"><span class="linenos">63</span></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">conn</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="n">Any</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="n">close</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 </span><span id="PostgresConnectionPool.putconn-64"><a href="#PostgresConnectionPool.putconn-64"><span class="linenos">64</span></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="PostgresConnectionPool.putconn-65"><a href="#PostgresConnectionPool.putconn-65"><span class="linenos">65</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_check_init</span><span class="p">()</span>
@@ -491,7 +487,7 @@
 
     </div>
     <a class="headerlink" href="#RedisClient"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="RedisClient-9"><a href="#RedisClient-9"><span class="linenos"> 9</span></a><span class="k">class</span> <span class="nc">RedisClient</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RedisClient-9"><a href="#RedisClient-9"><span class="linenos"> 9</span></a><span class="k">class</span><span class="w"> </span><span class="nc">RedisClient</span><span class="p">:</span>
 </span><span id="RedisClient-10"><a href="#RedisClient-10"><span class="linenos">10</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Create a Redis client.</span>
 </span><span id="RedisClient-11"><a href="#RedisClient-11"><span class="linenos">11</span></a>
 </span><span id="RedisClient-12"><a href="#RedisClient-12"><span class="linenos">12</span></a><span class="sd">    Attributes:</span>
@@ -503,7 +499,7 @@
 </span><span id="RedisClient-18"><a href="#RedisClient-18"><span class="linenos">18</span></a><span class="sd">        set: Set a value in Redis.</span>
 </span><span id="RedisClient-19"><a href="#RedisClient-19"><span class="linenos">19</span></a><span class="sd">    &quot;&quot;&quot;</span>
 </span><span id="RedisClient-20"><a href="#RedisClient-20"><span class="linenos">20</span></a>
-</span><span id="RedisClient-21"><a href="#RedisClient-21"><span class="linenos">21</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="RedisClient-21"><a href="#RedisClient-21"><span class="linenos">21</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="RedisClient-22"><a href="#RedisClient-22"><span class="linenos">22</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="RedisClient-23"><a href="#RedisClient-23"><span class="linenos">23</span></a>        <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
 </span><span id="RedisClient-24"><a href="#RedisClient-24"><span class="linenos">24</span></a>        <span class="n">port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">6379</span><span class="p">,</span>
@@ -512,7 +508,7 @@
 </span><span id="RedisClient-27"><a href="#RedisClient-27"><span class="linenos">27</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">port</span> <span class="o">=</span> <span class="n">port</span>
 </span><span id="RedisClient-28"><a href="#RedisClient-28"><span class="linenos">28</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_client</span><span class="p">()</span>
 </span><span id="RedisClient-29"><a href="#RedisClient-29"><span class="linenos">29</span></a>
-</span><span id="RedisClient-30"><a href="#RedisClient-30"><span class="linenos">30</span></a>    <span class="k">def</span> <span class="nf">_get_client</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">redis</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Redis</span><span class="p">,</span> <span class="n">redis</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">RedisCluster</span><span class="p">]:</span>
+</span><span id="RedisClient-30"><a href="#RedisClient-30"><span class="linenos">30</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_get_client</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">redis</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">Redis</span><span class="p">,</span> <span class="n">redis</span><span class="o">.</span><span class="n">cluster</span><span class="o">.</span><span class="n">RedisCluster</span><span class="p">]:</span>
 </span><span id="RedisClient-31"><a href="#RedisClient-31"><span class="linenos">31</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a Redis client.</span>
 </span><span id="RedisClient-32"><a href="#RedisClient-32"><span class="linenos">32</span></a>
 </span><span id="RedisClient-33"><a href="#RedisClient-33"><span class="linenos">33</span></a><span class="sd">        Note:</span>
@@ -529,7 +525,7 @@
 </span><span id="RedisClient-44"><a href="#RedisClient-44"><span class="linenos">44</span></a>                <span class="n">connection_pool</span><span class="o">=</span><span class="n">connection_pool</span><span class="p">,</span> <span class="n">retry</span><span class="o">=</span><span class="n">Retry</span><span class="p">(</span><span class="n">ExponentialBackoff</span><span class="p">(),</span> <span class="mi">6</span><span class="p">)</span>
 </span><span id="RedisClient-45"><a href="#RedisClient-45"><span class="linenos">45</span></a>            <span class="p">)</span>
 </span><span id="RedisClient-46"><a href="#RedisClient-46"><span class="linenos">46</span></a>
-</span><span id="RedisClient-47"><a href="#RedisClient-47"><span class="linenos">47</span></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+</span><span id="RedisClient-47"><a href="#RedisClient-47"><span class="linenos">47</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 </span><span id="RedisClient-48"><a href="#RedisClient-48"><span class="linenos">48</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a value from Redis.</span>
 </span><span id="RedisClient-49"><a href="#RedisClient-49"><span class="linenos">49</span></a>
 </span><span id="RedisClient-50"><a href="#RedisClient-50"><span class="linenos">50</span></a><span class="sd">        Args:</span>
@@ -539,7 +535,7 @@
 </span><span id="RedisClient-54"><a href="#RedisClient-54"><span class="linenos">54</span></a><span class="sd">            The value for the key (if it exists, otherwise None).&quot;&quot;&quot;</span>
 </span><span id="RedisClient-55"><a href="#RedisClient-55"><span class="linenos">55</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 </span><span id="RedisClient-56"><a href="#RedisClient-56"><span class="linenos">56</span></a>
-</span><span id="RedisClient-57"><a href="#RedisClient-57"><span class="linenos">57</span></a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="RedisClient-57"><a href="#RedisClient-57"><span class="linenos">57</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="RedisClient-58"><a href="#RedisClient-58"><span class="linenos">58</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a value in Redis.</span>
 </span><span id="RedisClient-59"><a href="#RedisClient-59"><span class="linenos">59</span></a>
 </span><span id="RedisClient-60"><a href="#RedisClient-60"><span class="linenos">60</span></a><span class="sd">        Args:</span>
@@ -588,7 +584,7 @@
 
     </div>
     <a class="headerlink" href="#RedisClient.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="RedisClient.__init__-21"><a href="#RedisClient.__init__-21"><span class="linenos">21</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RedisClient.__init__-21"><a href="#RedisClient.__init__-21"><span class="linenos">21</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="RedisClient.__init__-22"><a href="#RedisClient.__init__-22"><span class="linenos">22</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="RedisClient.__init__-23"><a href="#RedisClient.__init__-23"><span class="linenos">23</span></a>        <span class="n">host</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span><span class="p">,</span>
 </span><span id="RedisClient.__init__-24"><a href="#RedisClient.__init__-24"><span class="linenos">24</span></a>        <span class="n">port</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">6379</span><span class="p">,</span>
@@ -613,7 +609,7 @@
 
     </div>
     <a class="headerlink" href="#RedisClient.get"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="RedisClient.get-47"><a href="#RedisClient.get-47"><span class="linenos">47</span></a>    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RedisClient.get-47"><a href="#RedisClient.get-47"><span class="linenos">47</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Any</span><span class="p">]:</span>
 </span><span id="RedisClient.get-48"><a href="#RedisClient.get-48"><span class="linenos">48</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Get a value from Redis.</span>
 </span><span id="RedisClient.get-49"><a href="#RedisClient.get-49"><span class="linenos">49</span></a>
 </span><span id="RedisClient.get-50"><a href="#RedisClient.get-50"><span class="linenos">50</span></a><span class="sd">        Args:</span>
@@ -653,7 +649,7 @@
 
     </div>
     <a class="headerlink" href="#RedisClient.set"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="RedisClient.set-57"><a href="#RedisClient.set-57"><span class="linenos">57</span></a>    <span class="k">def</span> <span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RedisClient.set-57"><a href="#RedisClient.set-57"><span class="linenos">57</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">set</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="RedisClient.set-58"><a href="#RedisClient.set-58"><span class="linenos">58</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Set a value in Redis.</span>
 </span><span id="RedisClient.set-59"><a href="#RedisClient.set-59"><span class="linenos">59</span></a>
 </span><span id="RedisClient.set-60"><a href="#RedisClient.set-60"><span class="linenos">60</span></a><span class="sd">        Args:</span>
@@ -705,17 +701,6 @@
 
                             </div>
                 </section>
-                <section id="RedisKeyError">
-                    <div class="attr variable">
-            <span class="name">RedisKeyError</span>
-
-        
-    </div>
-    <a class="headerlink" href="#RedisKeyError"></a>
-    
-    
-
-                </section>
                 <section id="SalesforceConnectionMixin">
                             <input id="SalesforceConnectionMixin-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
 <div class="attr class">
@@ -727,10 +712,10 @@
 
     </div>
     <a class="headerlink" href="#SalesforceConnectionMixin"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="SalesforceConnectionMixin-7"><a href="#SalesforceConnectionMixin-7"><span class="linenos"> 7</span></a><span class="k">class</span> <span class="nc">SalesforceConnectionMixin</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="SalesforceConnectionMixin-7"><a href="#SalesforceConnectionMixin-7"><span class="linenos"> 7</span></a><span class="k">class</span><span class="w"> </span><span class="nc">SalesforceConnectionMixin</span><span class="p">:</span>
 </span><span id="SalesforceConnectionMixin-8"><a href="#SalesforceConnectionMixin-8"><span class="linenos"> 8</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Mixin class for providing access to a Salesforce instance.&quot;&quot;&quot;</span>
 </span><span id="SalesforceConnectionMixin-9"><a href="#SalesforceConnectionMixin-9"><span class="linenos"> 9</span></a>
-</span><span id="SalesforceConnectionMixin-10"><a href="#SalesforceConnectionMixin-10"><span class="linenos">10</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="SalesforceConnectionMixin-10"><a href="#SalesforceConnectionMixin-10"><span class="linenos">10</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="SalesforceConnectionMixin-11"><a href="#SalesforceConnectionMixin-11"><span class="linenos">11</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="SalesforceConnectionMixin-12"><a href="#SalesforceConnectionMixin-12"><span class="linenos">12</span></a>        <span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="SalesforceConnectionMixin-13"><a href="#SalesforceConnectionMixin-13"><span class="linenos">13</span></a>        <span class="n">password</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
@@ -755,7 +740,7 @@
 </span><span id="SalesforceConnectionMixin-32"><a href="#SalesforceConnectionMixin-32"><span class="linenos">32</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">version</span> <span class="o">=</span> <span class="n">version</span>
 </span><span id="SalesforceConnectionMixin-33"><a href="#SalesforceConnectionMixin-33"><span class="linenos">33</span></a>
 </span><span id="SalesforceConnectionMixin-34"><a href="#SalesforceConnectionMixin-34"><span class="linenos">34</span></a>    <span class="nd">@cached_property</span>
-</span><span id="SalesforceConnectionMixin-35"><a href="#SalesforceConnectionMixin-35"><span class="linenos">35</span></a>    <span class="k">def</span> <span class="nf">sf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Salesforce</span><span class="p">:</span>
+</span><span id="SalesforceConnectionMixin-35"><a href="#SalesforceConnectionMixin-35"><span class="linenos">35</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">sf</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Salesforce</span><span class="p">:</span>
 </span><span id="SalesforceConnectionMixin-36"><a href="#SalesforceConnectionMixin-36"><span class="linenos">36</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Salesforce connection object. Generated on first access, then cached.&quot;&quot;&quot;</span>
 </span><span id="SalesforceConnectionMixin-37"><a href="#SalesforceConnectionMixin-37"><span class="linenos">37</span></a>        <span class="k">return</span> <span class="p">(</span>
 </span><span id="SalesforceConnectionMixin-38"><a href="#SalesforceConnectionMixin-38"><span class="linenos">38</span></a>            <span class="n">Salesforce</span><span class="p">(</span>
@@ -790,7 +775,7 @@
 
     </div>
     <a class="headerlink" href="#SalesforceConnectionMixin.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="SalesforceConnectionMixin.__init__-10"><a href="#SalesforceConnectionMixin.__init__-10"><span class="linenos">10</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="SalesforceConnectionMixin.__init__-10"><a href="#SalesforceConnectionMixin.__init__-10"><span class="linenos">10</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="SalesforceConnectionMixin.__init__-11"><a href="#SalesforceConnectionMixin.__init__-11"><span class="linenos">11</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="SalesforceConnectionMixin.__init__-12"><a href="#SalesforceConnectionMixin.__init__-12"><span class="linenos">12</span></a>        <span class="n">username</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="SalesforceConnectionMixin.__init__-13"><a href="#SalesforceConnectionMixin.__init__-13"><span class="linenos">13</span></a>        <span class="n">password</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>

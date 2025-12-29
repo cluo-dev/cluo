@@ -7,7 +7,6 @@ __all__ = [
     "PostgresConnectionMixin",
     "PostgresConnectionPool",
     "RedisClient",
-    "RedisKeyError",
     "SalesforceConnectionMixin",
     "config",
 ]

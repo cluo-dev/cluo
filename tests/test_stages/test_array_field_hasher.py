@@ -44,43 +44,6 @@ def test_call_defaults(processes):
 
 
 @parametrize_processes(ArrayFieldHasherStage)
-def test_streamsets_hashes_no_nulls(processes):
-    stage = ArrayFieldHasherStage(
-        hash_fields=[
-            ["float", "string"],
-            ["int", "float"],
-            ["string", "none"],
-            ["none"],
-        ],
-        processes=processes,
-        error_handling_method=ErrorHandlingMethod.RAISE,
-        streamsets_compatible=True,
-    )
-    test_batch = Batch(
-        records=[
-            Record(
-                data={
-                    "int": 1,
-                    "float": 10.0,
-                    "string": "string",
-                    "none": None,
-                }
-            )
-        ]
-    )
-    processed_batch = stage(test_batch)
-    expected_hashes = [
-        "21b8ceb502b7ad99fd67f78030dbdaeb",
-        "44d71dde5d3586d690f74383660f9392",
-    ]
-    assert processed_batch.records[0].data["array_hash"] == expected_hashes
-    assert processed_batch.records[0].data["array_hash_name"] == [
-        "float_string_hash",
-        "int_float_hash",
-    ]
-
-
-@parametrize_processes(ArrayFieldHasherStage)
 def test_call_non_defaults(processes):
     hash_destination = "hash_destination"
     hash_name_destination = "hash_name_destination"
@@ -115,50 +78,4 @@ def test_call_non_defaults(processes):
         "float_string_hash",
         "int_float_hash",
         "int_float_none_hash",
-    ]
-
-
-@parametrize_processes(ArrayFieldHasherStage)
-def test_streamsets_hashes_allow_nulls(processes):
-    hash_destination = "hash_destination"
-    hash_name_destination = "hash_name_destination"
-    stage = ArrayFieldHasherStage(
-        hash_fields=[
-            ["float", "string"],
-            ["int", "float"],
-            ["int", "float", "none"],
-            ["none"],
-        ],
-        hash_destination=hash_destination,
-        hash_name_destination=hash_name_destination,
-        hash_nulls=True,
-        processes=processes,
-        error_handling_method=ErrorHandlingMethod.RAISE,
-        streamsets_compatible=True,
-    )
-    test_batch = Batch(
-        records=[
-            Record(
-                data={
-                    "int": 1,
-                    "float": 10.0,
-                    "string": "string",
-                    "none": None,
-                }
-            )
-        ]
-    )
-    processed_batch = stage(test_batch)
-    expected_hashes = [
-        "21b8ceb502b7ad99fd67f78030dbdaeb",
-        "44d71dde5d3586d690f74383660f9392",
-        "fd30203771f246fbf22a241b713187f1",
-        "57e9e4f0d93e1acfd21479b6aaaa32b7",
-    ]
-    assert processed_batch.records[0].data[hash_destination] == expected_hashes
-    assert processed_batch.records[0].data[hash_name_destination] == [
-        "float_string_hash",
-        "int_float_hash",
-        "int_float_none_hash",
-        "none_hash",
     ]
