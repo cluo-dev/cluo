@@ -137,6 +137,9 @@ def kafka_consumer(
     }
     consumer = Consumer(consumer_conf)
     consumer.subscribe([kafka_test_topic])
+    # Wait for partition assignment
+    while not consumer.assignment():
+        consumer.poll(timeout=0.1)
     yield consumer
     consumer.commit()
     consumer.close()

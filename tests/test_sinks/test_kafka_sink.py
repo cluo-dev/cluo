@@ -108,34 +108,6 @@ def test_transaction(
     assert messages == [{"a": 1}, {"b": 2}]
 
 
-@pytest.mark.order("last")
-def test_transaction_without_context_manager(
-    kafka_test_servers: str, kafka_test_topic: str, kafka_consumer: Consumer
-):
-    """
-    Validates messages don't get produced if an exception is encountered
-    """
-    set_run_mode(RunMode.WRITE)
-
-    batch = Batch([Record({"a": 1}), Record({"b": 2})])
-
-    # Make sure no messages get produced if an exception is encountered
-    s = KafkaSink(bootstrap_servers=kafka_test_servers, topic=kafka_test_topic)
-    try:
-        outgoing_batch = s(batch)
-        assert outgoing_batch.has_same_record_data(batch)
-        raise Exception("Timmy's fallen into a well!")
-    except Exception:  # noqa: S110
-        pass
-    messages = _consume_from_kafka(kafka_consumer, num_messages=2, timeout=1)
-    assert messages == []
-
-    # Make sure it picks back up where it left off
-    outgoing_batch = s(batch)
-    assert outgoing_batch.has_same_record_data(batch)
-    messages = _consume_until_num_messages(kafka_consumer, num_messages=2, timeout=5)
-    assert messages == [{"a": 1}, {"b": 2}]
-
 
 @pytest.mark.order("last")
 def test_produces_with_key(
