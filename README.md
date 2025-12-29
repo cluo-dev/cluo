@@ -3,11 +3,20 @@
 
 <p align="center">
 
-<a href="https://img.shields.io/badge/python-3.11-blue.svg">
+<a href="https://github.com/cluo-dev/cluo/actions/workflows/code_checks.yml">
+    <img src="https://github.com/cluo-dev/cluo/actions/workflows/code_checks.yml/badge.svg" alt="code_checks" />
+</a>
+<a href="https://github.com/cluo-dev/cluo/actions/workflows/run_tests.yml">
+    <img src="https://github.com/cluo-dev/cluo/actions/workflows/run_tests.yml/badge.svg" alt="run_tests" />
+</a>
+<a href="https://github.com/cluo-dev/cluo/actions/workflows/build_docs.yml">
+    <img src="https://github.com/cluo-dev/cluo/actions/workflows/build_docs.yml/badge.svg" alt="build_docs" />
+</a>
+<a href="https://shields.io">
     <img src="https://img.shields.io/badge/python-3.11-blue.svg" alt="Python 3.11" />
 </a>
-<a href="https://img.shields.io/badge/code%20style-black-000000.svg">
-    <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black" >
+<a href="https://github.com/psf/black">
+    <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black" />
 </a>
 <p>Cluo is a stage-based, composable data stream processing library in Python.</p>
 </div>

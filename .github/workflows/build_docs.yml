@@ -1,0 +1,37 @@
+name: Build Documentation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    
+    - name: Install poetry
+      run: |
+        pip install poetry==1.8.3
+    
+    - name: Install dependencies
+      run: |
+        poetry install
+    
+    - name: Build documentation
+      run: |
+        poetry run pdoc --docformat google -o _docs/ --logo "https://static.wikia.nocookie.net/newersupermariobroswii/images/b/bf/Warp_pipe.png/revision/latest/scale-to-width-down/200?cb=20181227070915" Documentation cluo
+    
+    - name: Upload documentation artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: documentation
+        path: _docs/
