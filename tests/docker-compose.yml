@@ -9,36 +9,25 @@ services:
     image: redis
     ports:
       - "6379:6379"
-  # Why we chose these images for zookeeper and Kafka:
-  #   Because they were the most downloaded images for Kafka on Dockerhub,
-  #   and these tags are the latest rolling version, hich is what Bitnami
-  #   suggests using for development
-  #   (https://docs.bitnami.com/tutorials/understand-rolling-tags-containers/#usage-recommendations)
-  zookeeper:
-    image: confluentinc/cp-zookeeper:latest
-    ports:
-      - "2181:2181"
-    platform: linux/amd64
-    environment:
-      ZOOKEEPER_CLIENT_PORT: 2181
-      ZOOKEEPER_TICK_TIME: 2000
+  # Using kafka in KRaft mode for simplicity
   kafka:
-    image: confluentinc/cp-kafka:latest
+    image: apache/kafka:latest
     ports:
       - "9092:9092"
       - "29092:29092"
+      - "29093:29093"
     platform: linux/amd64
     environment:
+      KAFKA_PROCESS_ROLES: broker,controller
       KAFKA_BROKER_ID: 1
-      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,INTERNAL:PLAINTEXT
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,INTERNAL:PLAINTEXT,CONTROLLER:PLAINTEXT
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://127.0.0.1:9092,INTERNAL://kafka:29092
-      KAFKA_LISTENERS: PLAINTEXT://:9092,INTERNAL://:29092
-      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:29093
+      KAFKA_LISTENERS: PLAINTEXT://:9092,INTERNAL://:29092,CONTROLLER://kafka:29093
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
-    depends_on:
-      - zookeeper
   registry:
     image: confluentinc/cp-schema-registry:latest
     ports:
@@ -46,10 +35,8 @@ services:
     platform: linux/amd64
     environment:
       SCHEMA_REGISTRY_HOST_NAME: registry
-      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: zookeeper:2181
-      SCHEMA_REGISTRY_KAFKA_BROKERS: PLAINTEXT://kafka:29092
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: PLAINTEXT://kafka:29092
       SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
     depends_on:
-      - zookeeper
       - kafka
 
