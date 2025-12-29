@@ -15,8 +15,8 @@
 <a href="https://shields.io">
     <img src="https://img.shields.io/badge/python-3.11-blue.svg" alt="Python 3.11" />
 </a>
-<a href="https://github.com/psf/black">
-    <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code style: black" />
+<a href="https://docs.astral.sh/ruff/">
+    <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" alt="Ruff" />
 </a>
 <p>Cluo is a stage-based, composable data stream processing library in Python.</p>
 </div>

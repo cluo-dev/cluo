@@ -6,9 +6,8 @@ Currently, we are using [Github Issues](https://github.com/cluo-dev/cluo/issues)
 ## Tooling
 This project uses the following tooling:  
 [poetry](https://python-poetry.org/docs/configuration/) for package/dependency management  
-[black](https://github.com/psf/black) for formatting  
 [mypy](https://mypy.readthedocs.io/en/stable/) for static type-checking  
-[flake8](https://flake8.pycqa.org/en/latest/) for linting  
+[ruff](https://docs.astral.sh/ruff/) for linting and formatting  
 [pre-commit](https://pre-commit.com/) for pre-commit hooks  
 [pdoc](https://pdoc.dev/) for documentation
 
