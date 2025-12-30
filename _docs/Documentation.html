@@ -81,14 +81,14 @@ Documentation    </h1>
 <p>First, some imports:</p>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="kn">import</span> <span class="nn">logging</span>
+<pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
 
-<span class="kn">from</span> <span class="nn">cluo</span> <span class="kn">import</span> <span class="n">config</span>
-<span class="kn">from</span> <span class="nn"><a href="cluo/core.html">cluo.core</a></span> <span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">Stage</span>
-<span class="kn">from</span> <span class="nn">cluo.data_types</span> <span class="kn">import</span> <span class="n">Record</span>
-<span class="kn">from</span> <span class="nn"><a href="cluo/sinks.html">cluo.sinks</a></span> <span class="kn">import</span> <span class="n">LoggerSink</span>
-<span class="kn">from</span> <span class="nn"><a href="cluo/sources.html">cluo.sources</a></span> <span class="kn">import</span> <span class="n">DummySource</span>
-<span class="kn">from</span> <span class="nn"><a href="cluo/stages.html">cluo.stages</a></span> <span class="kn">import</span> <span class="n">RenameFieldsStage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cluo</span><span class="w"> </span><span class="kn">import</span> <span class="n">config</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="cluo/core.html">cluo.core</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">Pipeline</span><span class="p">,</span> <span class="n">Stage</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">cluo.data_types</span><span class="w"> </span><span class="kn">import</span> <span class="n">Record</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="cluo/sinks.html">cluo.sinks</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">LoggerSink</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="cluo/sources.html">cluo.sources</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">DummySource</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn"><a href="cluo/stages.html">cluo.stages</a></span><span class="w"> </span><span class="kn">import</span> <span class="n">RenameFieldsStage</span>
 </code></pre>
 </div>
 
@@ -120,13 +120,13 @@ Documentation    </h1>
 <p>We'll also create our own stage. For this, all we need to do is inherit the <code>Stage</code> class and implement a <code>.process_record</code> or <code>.process_batch</code> method that takes and returns a <code>Record</code> type or <code>Batch</code> object, respectively. (Notice the <code>.__init__</code> function body. You'll need to follow this pattern)</p>
 
 <div class="pdoc-code codehilite">
-<pre><span></span><code><span class="k">class</span> <span class="nc">ExponentiationStage</span><span class="p">(</span><span class="n">Stage</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exponent</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">ExponentiationStage</span><span class="p">(</span><span class="n">Stage</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exponent</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">processes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">Stage</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">,</span> <span class="n">processes</span><span class="o">=</span><span class="n">processes</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">exponent</span> <span class="o">=</span> <span class="n">exponent</span>
 
-    <span class="k">def</span> <span class="nf">process_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Record</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">process_record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Record</span><span class="p">:</span>
         <span class="n">record</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span> <span class="o">**=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exponent</span>
         <span class="n">record</span><span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span> <span class="o">**=</span> <span class="bp">self</span><span class="o">.</span><span class="n">exponent</span>
 
@@ -169,9 +169,8 @@ Documentation    </h1>
 
 <p>This project uses the following tooling: <br />
 <a href="https://python-poetry.org/docs/configuration/">poetry</a> for package/dependency management <br />
-<a href="https://github.com/psf/black">black</a> for formatting <br />
 <a href="https://mypy.readthedocs.io/en/stable/">mypy</a> for static type-checking <br />
-<a href="https://flake8.pycqa.org/en/latest/">flake8</a> for linting <br />
+<a href="https://docs.astral.sh/ruff/">ruff</a> for linting and formatting <br />
 <a href="https://pre-commit.com/">pre-commit</a> for pre-commit hooks <br />
 <a href="https://pdoc.dev/">pdoc</a> for documentation</p>
 

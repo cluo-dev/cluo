@@ -64,11 +64,11 @@
 
                         <label class="view-source-button" for="mod-run_mode-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos">1</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
 </span><span id="L-2"><a href="#L-2"><span class="linenos">2</span></a>
 </span><span id="L-3"><a href="#L-3"><span class="linenos">3</span></a>
-</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="k">class</span> <span class="nc">RunMode</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Modes in which pipelines can be run. Analogous to StreamSets preview behavior.&quot;&quot;&quot;</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos">4</span></a><span class="k">class</span><span class="w"> </span><span class="nc">RunMode</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos">5</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Modes in which pipelines can be run.  Controlls behavior related to sink and offset increment.&quot;&quot;&quot;</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos">6</span></a>
 </span><span id="L-7"><a href="#L-7"><span class="linenos">7</span></a>    <span class="n">WRITE</span> <span class="o">=</span> <span class="s2">&quot;WRITE&quot;</span>
 </span><span id="L-8"><a href="#L-8"><span class="linenos">8</span></a>    <span class="n">PREVIEW</span> <span class="o">=</span> <span class="s2">&quot;PREVIEW&quot;</span>
@@ -87,15 +87,15 @@
 
     </div>
     <a class="headerlink" href="#RunMode"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="RunMode-5"><a href="#RunMode-5"><span class="linenos">5</span></a><span class="k">class</span> <span class="nc">RunMode</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-</span><span id="RunMode-6"><a href="#RunMode-6"><span class="linenos">6</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Modes in which pipelines can be run. Analogous to StreamSets preview behavior.&quot;&quot;&quot;</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="RunMode-5"><a href="#RunMode-5"><span class="linenos">5</span></a><span class="k">class</span><span class="w"> </span><span class="nc">RunMode</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+</span><span id="RunMode-6"><a href="#RunMode-6"><span class="linenos">6</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Modes in which pipelines can be run.  Controlls behavior related to sink and offset increment.&quot;&quot;&quot;</span>
 </span><span id="RunMode-7"><a href="#RunMode-7"><span class="linenos">7</span></a>
 </span><span id="RunMode-8"><a href="#RunMode-8"><span class="linenos">8</span></a>    <span class="n">WRITE</span> <span class="o">=</span> <span class="s2">&quot;WRITE&quot;</span>
 </span><span id="RunMode-9"><a href="#RunMode-9"><span class="linenos">9</span></a>    <span class="n">PREVIEW</span> <span class="o">=</span> <span class="s2">&quot;PREVIEW&quot;</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Modes in which pipelines can be run. Analogous to StreamSets preview behavior.</p>
+            <div class="docstring"><p>Modes in which pipelines can be run.  Controlls behavior related to sink and offset increment.</p>
 </div>
 
 

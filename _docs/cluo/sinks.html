@@ -112,11 +112,11 @@
 
                         <label class="view-source-button" for="mod-sinks-view-source"><span>View Source</span></label>
 
-                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="kn">from</span> <span class="nn">.discard</span> <span class="kn">import</span> <span class="n">DiscardSink</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">from</span> <span class="nn">.kafka_sink</span> <span class="kn">import</span> <span class="n">KafkaSink</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="kn">from</span> <span class="nn">.logger</span> <span class="kn">import</span> <span class="n">LoggerSink</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">.postgres_append</span> <span class="kn">import</span> <span class="n">PostgresAppendSink</span>
-</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span> <span class="nn">.postgres_upsert</span> <span class="kn">import</span> <span class="n">PostgresUpsertSink</span>
+                        <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.discard</span><span class="w"> </span><span class="kn">import</span> <span class="n">DiscardSink</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.kafka_sink</span><span class="w"> </span><span class="kn">import</span> <span class="n">KafkaSink</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">LoggerSink</span>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.postgres_append</span><span class="w"> </span><span class="kn">import</span> <span class="n">PostgresAppendSink</span>
+</span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">from</span><span class="w"> </span><span class="nn">.postgres_upsert</span><span class="w"> </span><span class="kn">import</span> <span class="n">PostgresUpsertSink</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>
 </span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
 </span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>    <span class="s2">&quot;LoggerSink&quot;</span><span class="p">,</span>
@@ -140,10 +140,10 @@
 
     </div>
     <a class="headerlink" href="#LoggerSink"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="LoggerSink-5"><a href="#LoggerSink-5"><span class="linenos"> 5</span></a><span class="k">class</span> <span class="nc">LoggerSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="LoggerSink-5"><a href="#LoggerSink-5"><span class="linenos"> 5</span></a><span class="k">class</span><span class="w"> </span><span class="nc">LoggerSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
 </span><span id="LoggerSink-6"><a href="#LoggerSink-6"><span class="linenos"> 6</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Logs all records to stdout. Typically used as a way of inspecting data during development.&quot;&quot;&quot;</span>
 </span><span id="LoggerSink-7"><a href="#LoggerSink-7"><span class="linenos"> 7</span></a>
-</span><span id="LoggerSink-8"><a href="#LoggerSink-8"><span class="linenos"> 8</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="LoggerSink-8"><a href="#LoggerSink-8"><span class="linenos"> 8</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="LoggerSink-9"><a href="#LoggerSink-9"><span class="linenos"> 9</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="LoggerSink-10"><a href="#LoggerSink-10"><span class="linenos">10</span></a>        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="LoggerSink-11"><a href="#LoggerSink-11"><span class="linenos">11</span></a>        <span class="n">processes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -166,7 +166,7 @@
 </span><span id="LoggerSink-28"><a href="#LoggerSink-28"><span class="linenos">28</span></a>            <span class="n">expose_metrics</span><span class="o">=</span><span class="n">expose_metrics</span><span class="p">,</span>
 </span><span id="LoggerSink-29"><a href="#LoggerSink-29"><span class="linenos">29</span></a>        <span class="p">)</span>
 </span><span id="LoggerSink-30"><a href="#LoggerSink-30"><span class="linenos">30</span></a>
-</span><span id="LoggerSink-31"><a href="#LoggerSink-31"><span class="linenos">31</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+</span><span id="LoggerSink-31"><a href="#LoggerSink-31"><span class="linenos">31</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="LoggerSink-32"><a href="#LoggerSink-32"><span class="linenos">32</span></a>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">batch</span><span class="p">)</span>
 </span><span id="LoggerSink-33"><a href="#LoggerSink-33"><span class="linenos">33</span></a>        <span class="k">return</span> <span class="n">batch</span>
 </span></pre></div>
@@ -186,7 +186,7 @@
 
     </div>
     <a class="headerlink" href="#LoggerSink.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="LoggerSink.__init__-8"><a href="#LoggerSink.__init__-8"><span class="linenos"> 8</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="LoggerSink.__init__-8"><a href="#LoggerSink.__init__-8"><span class="linenos"> 8</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="LoggerSink.__init__-9"><a href="#LoggerSink.__init__-9"><span class="linenos"> 9</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="LoggerSink.__init__-10"><a href="#LoggerSink.__init__-10"><span class="linenos">10</span></a>        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="LoggerSink.__init__-11"><a href="#LoggerSink.__init__-11"><span class="linenos">11</span></a>        <span class="n">processes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -236,7 +236,7 @@
 
     </div>
     <a class="headerlink" href="#LoggerSink.process_batch"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="LoggerSink.process_batch-31"><a href="#LoggerSink.process_batch-31"><span class="linenos">31</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="LoggerSink.process_batch-31"><a href="#LoggerSink.process_batch-31"><span class="linenos">31</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="LoggerSink.process_batch-32"><a href="#LoggerSink.process_batch-32"><span class="linenos">32</span></a>        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">batch</span><span class="p">)</span>
 </span><span id="LoggerSink.process_batch-33"><a href="#LoggerSink.process_batch-33"><span class="linenos">33</span></a>        <span class="k">return</span> <span class="n">batch</span>
 </span></pre></div>
@@ -278,10 +278,10 @@
 
     </div>
     <a class="headerlink" href="#PostgresAppendSink"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresAppendSink-11"><a href="#PostgresAppendSink-11"><span class="linenos">11</span></a><span class="k">class</span> <span class="nc">PostgresAppendSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresAppendSink-11"><a href="#PostgresAppendSink-11"><span class="linenos">11</span></a><span class="k">class</span><span class="w"> </span><span class="nc">PostgresAppendSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
 </span><span id="PostgresAppendSink-12"><a href="#PostgresAppendSink-12"><span class="linenos">12</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;For appending rows to a Postgres table.&quot;&quot;&quot;</span>
 </span><span id="PostgresAppendSink-13"><a href="#PostgresAppendSink-13"><span class="linenos">13</span></a>
-</span><span id="PostgresAppendSink-14"><a href="#PostgresAppendSink-14"><span class="linenos">14</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="PostgresAppendSink-14"><a href="#PostgresAppendSink-14"><span class="linenos">14</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresAppendSink-15"><a href="#PostgresAppendSink-15"><span class="linenos">15</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresAppendSink-16"><a href="#PostgresAppendSink-16"><span class="linenos">16</span></a>        <span class="n">schema</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="PostgresAppendSink-17"><a href="#PostgresAppendSink-17"><span class="linenos">17</span></a>        <span class="n">table</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -315,7 +315,7 @@
 </span><span id="PostgresAppendSink-45"><a href="#PostgresAppendSink-45"><span class="linenos">45</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">:</span> <span class="n">Table</span> <span class="o">|</span> <span class="kc">None</span>
 </span><span id="PostgresAppendSink-46"><a href="#PostgresAppendSink-46"><span class="linenos">46</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 </span><span id="PostgresAppendSink-47"><a href="#PostgresAppendSink-47"><span class="linenos">47</span></a>
-</span><span id="PostgresAppendSink-48"><a href="#PostgresAppendSink-48"><span class="linenos">48</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+</span><span id="PostgresAppendSink-48"><a href="#PostgresAppendSink-48"><span class="linenos">48</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="PostgresAppendSink-49"><a href="#PostgresAppendSink-49"><span class="linenos">49</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Write the batch to the database.</span>
 </span><span id="PostgresAppendSink-50"><a href="#PostgresAppendSink-50"><span class="linenos">50</span></a>
 </span><span id="PostgresAppendSink-51"><a href="#PostgresAppendSink-51"><span class="linenos">51</span></a><span class="sd">        Args:</span>
@@ -359,7 +359,7 @@
 
     </div>
     <a class="headerlink" href="#PostgresAppendSink.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresAppendSink.__init__-14"><a href="#PostgresAppendSink.__init__-14"><span class="linenos">14</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresAppendSink.__init__-14"><a href="#PostgresAppendSink.__init__-14"><span class="linenos">14</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresAppendSink.__init__-15"><a href="#PostgresAppendSink.__init__-15"><span class="linenos">15</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresAppendSink.__init__-16"><a href="#PostgresAppendSink.__init__-16"><span class="linenos">16</span></a>        <span class="n">schema</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="PostgresAppendSink.__init__-17"><a href="#PostgresAppendSink.__init__-17"><span class="linenos">17</span></a>        <span class="n">table</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -423,7 +423,7 @@
 
     </div>
     <a class="headerlink" href="#PostgresAppendSink.process_batch"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresAppendSink.process_batch-48"><a href="#PostgresAppendSink.process_batch-48"><span class="linenos">48</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresAppendSink.process_batch-48"><a href="#PostgresAppendSink.process_batch-48"><span class="linenos">48</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="PostgresAppendSink.process_batch-49"><a href="#PostgresAppendSink.process_batch-49"><span class="linenos">49</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Write the batch to the database.</span>
 </span><span id="PostgresAppendSink.process_batch-50"><a href="#PostgresAppendSink.process_batch-50"><span class="linenos">50</span></a>
 </span><span id="PostgresAppendSink.process_batch-51"><a href="#PostgresAppendSink.process_batch-51"><span class="linenos">51</span></a><span class="sd">        Args:</span>
@@ -503,10 +503,10 @@
 
     </div>
     <a class="headerlink" href="#DiscardSink"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DiscardSink-5"><a href="#DiscardSink-5"><span class="linenos"> 5</span></a><span class="k">class</span> <span class="nc">DiscardSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DiscardSink-5"><a href="#DiscardSink-5"><span class="linenos"> 5</span></a><span class="k">class</span><span class="w"> </span><span class="nc">DiscardSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
 </span><span id="DiscardSink-6"><a href="#DiscardSink-6"><span class="linenos"> 6</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Discards all records received.&quot;&quot;&quot;</span>
 </span><span id="DiscardSink-7"><a href="#DiscardSink-7"><span class="linenos"> 7</span></a>
-</span><span id="DiscardSink-8"><a href="#DiscardSink-8"><span class="linenos"> 8</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="DiscardSink-8"><a href="#DiscardSink-8"><span class="linenos"> 8</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="DiscardSink-9"><a href="#DiscardSink-9"><span class="linenos"> 9</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="DiscardSink-10"><a href="#DiscardSink-10"><span class="linenos">10</span></a>        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="DiscardSink-11"><a href="#DiscardSink-11"><span class="linenos">11</span></a>        <span class="n">processes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -529,7 +529,7 @@
 </span><span id="DiscardSink-28"><a href="#DiscardSink-28"><span class="linenos">28</span></a>            <span class="n">expose_metrics</span><span class="o">=</span><span class="n">expose_metrics</span><span class="p">,</span>
 </span><span id="DiscardSink-29"><a href="#DiscardSink-29"><span class="linenos">29</span></a>        <span class="p">)</span>
 </span><span id="DiscardSink-30"><a href="#DiscardSink-30"><span class="linenos">30</span></a>
-</span><span id="DiscardSink-31"><a href="#DiscardSink-31"><span class="linenos">31</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+</span><span id="DiscardSink-31"><a href="#DiscardSink-31"><span class="linenos">31</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="DiscardSink-32"><a href="#DiscardSink-32"><span class="linenos">32</span></a>        <span class="k">return</span> <span class="n">batch</span>
 </span></pre></div>
 
@@ -548,7 +548,7 @@
 
     </div>
     <a class="headerlink" href="#DiscardSink.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DiscardSink.__init__-8"><a href="#DiscardSink.__init__-8"><span class="linenos"> 8</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DiscardSink.__init__-8"><a href="#DiscardSink.__init__-8"><span class="linenos"> 8</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="DiscardSink.__init__-9"><a href="#DiscardSink.__init__-9"><span class="linenos"> 9</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="DiscardSink.__init__-10"><a href="#DiscardSink.__init__-10"><span class="linenos">10</span></a>        <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="DiscardSink.__init__-11"><a href="#DiscardSink.__init__-11"><span class="linenos">11</span></a>        <span class="n">processes</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
@@ -598,7 +598,7 @@
 
     </div>
     <a class="headerlink" href="#DiscardSink.process_batch"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="DiscardSink.process_batch-31"><a href="#DiscardSink.process_batch-31"><span class="linenos">31</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="DiscardSink.process_batch-31"><a href="#DiscardSink.process_batch-31"><span class="linenos">31</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="DiscardSink.process_batch-32"><a href="#DiscardSink.process_batch-32"><span class="linenos">32</span></a>        <span class="k">return</span> <span class="n">batch</span>
 </span></pre></div>
 
@@ -639,10 +639,10 @@
 
     </div>
     <a class="headerlink" href="#PostgresUpsertSink"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresUpsertSink-13"><a href="#PostgresUpsertSink-13"><span class="linenos">13</span></a><span class="k">class</span> <span class="nc">PostgresUpsertSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresUpsertSink-13"><a href="#PostgresUpsertSink-13"><span class="linenos">13</span></a><span class="k">class</span><span class="w"> </span><span class="nc">PostgresUpsertSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
 </span><span id="PostgresUpsertSink-14"><a href="#PostgresUpsertSink-14"><span class="linenos">14</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;For upserting rows to a Postgres table.&quot;&quot;&quot;</span>
 </span><span id="PostgresUpsertSink-15"><a href="#PostgresUpsertSink-15"><span class="linenos">15</span></a>
-</span><span id="PostgresUpsertSink-16"><a href="#PostgresUpsertSink-16"><span class="linenos">16</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="PostgresUpsertSink-16"><a href="#PostgresUpsertSink-16"><span class="linenos">16</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresUpsertSink-17"><a href="#PostgresUpsertSink-17"><span class="linenos">17</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresUpsertSink-18"><a href="#PostgresUpsertSink-18"><span class="linenos">18</span></a>        <span class="n">schema</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="PostgresUpsertSink-19"><a href="#PostgresUpsertSink-19"><span class="linenos">19</span></a>        <span class="n">table</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -682,7 +682,7 @@
 </span><span id="PostgresUpsertSink-53"><a href="#PostgresUpsertSink-53"><span class="linenos">53</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_table</span><span class="p">:</span> <span class="n">Table</span> <span class="o">|</span> <span class="kc">None</span>
 </span><span id="PostgresUpsertSink-54"><a href="#PostgresUpsertSink-54"><span class="linenos">54</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
 </span><span id="PostgresUpsertSink-55"><a href="#PostgresUpsertSink-55"><span class="linenos">55</span></a>
-</span><span id="PostgresUpsertSink-56"><a href="#PostgresUpsertSink-56"><span class="linenos">56</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+</span><span id="PostgresUpsertSink-56"><a href="#PostgresUpsertSink-56"><span class="linenos">56</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="PostgresUpsertSink-57"><a href="#PostgresUpsertSink-57"><span class="linenos">57</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Write the batch to the database.</span>
 </span><span id="PostgresUpsertSink-58"><a href="#PostgresUpsertSink-58"><span class="linenos">58</span></a>
 </span><span id="PostgresUpsertSink-59"><a href="#PostgresUpsertSink-59"><span class="linenos">59</span></a><span class="sd">        Args:</span>
@@ -692,7 +692,7 @@
 </span><span id="PostgresUpsertSink-63"><a href="#PostgresUpsertSink-63"><span class="linenos">63</span></a><span class="sd">            Batch: The batch.</span>
 </span><span id="PostgresUpsertSink-64"><a href="#PostgresUpsertSink-64"><span class="linenos">64</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="PostgresUpsertSink-65"><a href="#PostgresUpsertSink-65"><span class="linenos">65</span></a>
-</span><span id="PostgresUpsertSink-66"><a href="#PostgresUpsertSink-66"><span class="linenos">66</span></a>        <span class="k">def</span> <span class="nf">_insert_dict</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+</span><span id="PostgresUpsertSink-66"><a href="#PostgresUpsertSink-66"><span class="linenos">66</span></a>        <span class="k">def</span><span class="w"> </span><span class="nf">_insert_dict</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 </span><span id="PostgresUpsertSink-67"><a href="#PostgresUpsertSink-67"><span class="linenos">67</span></a>            <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">data</span><span class="p">}</span>
 </span><span id="PostgresUpsertSink-68"><a href="#PostgresUpsertSink-68"><span class="linenos">68</span></a>
 </span><span id="PostgresUpsertSink-69"><a href="#PostgresUpsertSink-69"><span class="linenos">69</span></a>        <span class="k">if</span> <span class="n">config_state</span><span class="o">.</span><span class="n">RUN_MODE</span> <span class="o">==</span> <span class="n">RunMode</span><span class="o">.</span><span class="n">WRITE</span><span class="p">:</span>
@@ -739,7 +739,7 @@
 
     </div>
     <a class="headerlink" href="#PostgresUpsertSink.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresUpsertSink.__init__-16"><a href="#PostgresUpsertSink.__init__-16"><span class="linenos">16</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresUpsertSink.__init__-16"><a href="#PostgresUpsertSink.__init__-16"><span class="linenos">16</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="PostgresUpsertSink.__init__-17"><a href="#PostgresUpsertSink.__init__-17"><span class="linenos">17</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="PostgresUpsertSink.__init__-18"><a href="#PostgresUpsertSink.__init__-18"><span class="linenos">18</span></a>        <span class="n">schema</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="PostgresUpsertSink.__init__-19"><a href="#PostgresUpsertSink.__init__-19"><span class="linenos">19</span></a>        <span class="n">table</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -811,7 +811,7 @@
 
     </div>
     <a class="headerlink" href="#PostgresUpsertSink.process_batch"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresUpsertSink.process_batch-56"><a href="#PostgresUpsertSink.process_batch-56"><span class="linenos">56</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="PostgresUpsertSink.process_batch-56"><a href="#PostgresUpsertSink.process_batch-56"><span class="linenos">56</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="PostgresUpsertSink.process_batch-57"><a href="#PostgresUpsertSink.process_batch-57"><span class="linenos">57</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;Write the batch to the database.</span>
 </span><span id="PostgresUpsertSink.process_batch-58"><a href="#PostgresUpsertSink.process_batch-58"><span class="linenos">58</span></a>
 </span><span id="PostgresUpsertSink.process_batch-59"><a href="#PostgresUpsertSink.process_batch-59"><span class="linenos">59</span></a><span class="sd">        Args:</span>
@@ -821,7 +821,7 @@
 </span><span id="PostgresUpsertSink.process_batch-63"><a href="#PostgresUpsertSink.process_batch-63"><span class="linenos">63</span></a><span class="sd">            Batch: The batch.</span>
 </span><span id="PostgresUpsertSink.process_batch-64"><a href="#PostgresUpsertSink.process_batch-64"><span class="linenos">64</span></a><span class="sd">        &quot;&quot;&quot;</span>
 </span><span id="PostgresUpsertSink.process_batch-65"><a href="#PostgresUpsertSink.process_batch-65"><span class="linenos">65</span></a>
-</span><span id="PostgresUpsertSink.process_batch-66"><a href="#PostgresUpsertSink.process_batch-66"><span class="linenos">66</span></a>        <span class="k">def</span> <span class="nf">_insert_dict</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+</span><span id="PostgresUpsertSink.process_batch-66"><a href="#PostgresUpsertSink.process_batch-66"><span class="linenos">66</span></a>        <span class="k">def</span><span class="w"> </span><span class="nf">_insert_dict</span><span class="p">(</span><span class="n">record</span><span class="p">:</span> <span class="n">Record</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
 </span><span id="PostgresUpsertSink.process_batch-67"><a href="#PostgresUpsertSink.process_batch-67"><span class="linenos">67</span></a>            <span class="k">return</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">record</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_columns</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">data</span><span class="p">}</span>
 </span><span id="PostgresUpsertSink.process_batch-68"><a href="#PostgresUpsertSink.process_batch-68"><span class="linenos">68</span></a>
 </span><span id="PostgresUpsertSink.process_batch-69"><a href="#PostgresUpsertSink.process_batch-69"><span class="linenos">69</span></a>        <span class="k">if</span> <span class="n">config_state</span><span class="o">.</span><span class="n">RUN_MODE</span> <span class="o">==</span> <span class="n">RunMode</span><span class="o">.</span><span class="n">WRITE</span><span class="p">:</span>
@@ -904,12 +904,12 @@
 
     </div>
     <a class="headerlink" href="#KafkaSink"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="KafkaSink-32"><a href="#KafkaSink-32"><span class="linenos"> 32</span></a><span class="k">class</span> <span class="nc">KafkaSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="KafkaSink-32"><a href="#KafkaSink-32"><span class="linenos"> 32</span></a><span class="k">class</span><span class="w"> </span><span class="nc">KafkaSink</span><span class="p">(</span><span class="n">Sink</span><span class="p">):</span>
 </span><span id="KafkaSink-33"><a href="#KafkaSink-33"><span class="linenos"> 33</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;For producing messages to a Kafka topic.&quot;&quot;&quot;</span>
 </span><span id="KafkaSink-34"><a href="#KafkaSink-34"><span class="linenos"> 34</span></a>
 </span><span id="KafkaSink-35"><a href="#KafkaSink-35"><span class="linenos"> 35</span></a>    <span class="n">DEFAULT_FLUSH_TIMEOUT</span> <span class="o">=</span> <span class="mf">5.0</span>
 </span><span id="KafkaSink-36"><a href="#KafkaSink-36"><span class="linenos"> 36</span></a>
-</span><span id="KafkaSink-37"><a href="#KafkaSink-37"><span class="linenos"> 37</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+</span><span id="KafkaSink-37"><a href="#KafkaSink-37"><span class="linenos"> 37</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="KafkaSink-38"><a href="#KafkaSink-38"><span class="linenos"> 38</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="KafkaSink-39"><a href="#KafkaSink-39"><span class="linenos"> 39</span></a>        <span class="n">bootstrap_servers</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="KafkaSink-40"><a href="#KafkaSink-40"><span class="linenos"> 40</span></a>        <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -946,7 +946,7 @@
 </span><span id="KafkaSink-71"><a href="#KafkaSink-71"><span class="linenos"> 71</span></a>        <span class="c1"># used to ensure transactions are enforced</span>
 </span><span id="KafkaSink-72"><a href="#KafkaSink-72"><span class="linenos"> 72</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_inside_context</span> <span class="o">=</span> <span class="kc">False</span>
 </span><span id="KafkaSink-73"><a href="#KafkaSink-73"><span class="linenos"> 73</span></a>
-</span><span id="KafkaSink-74"><a href="#KafkaSink-74"><span class="linenos"> 74</span></a>    <span class="k">def</span> <span class="nf">_get_producer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Producer</span><span class="p">:</span>
+</span><span id="KafkaSink-74"><a href="#KafkaSink-74"><span class="linenos"> 74</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_get_producer</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Producer</span><span class="p">:</span>
 </span><span id="KafkaSink-75"><a href="#KafkaSink-75"><span class="linenos"> 75</span></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">producer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="KafkaSink-76"><a href="#KafkaSink-76"><span class="linenos"> 76</span></a>            <span class="bp">self</span><span class="o">.</span><span class="n">producer</span> <span class="o">=</span> <span class="n">Producer</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">conf</span><span class="p">)</span>
 </span><span id="KafkaSink-77"><a href="#KafkaSink-77"><span class="linenos"> 77</span></a>            <span class="k">try</span><span class="p">:</span>
@@ -958,7 +958,7 @@
 </span><span id="KafkaSink-83"><a href="#KafkaSink-83"><span class="linenos"> 83</span></a>                    <span class="k">raise</span> <span class="n">exc</span>
 </span><span id="KafkaSink-84"><a href="#KafkaSink-84"><span class="linenos"> 84</span></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">producer</span>
 </span><span id="KafkaSink-85"><a href="#KafkaSink-85"><span class="linenos"> 85</span></a>
-</span><span id="KafkaSink-86"><a href="#KafkaSink-86"><span class="linenos"> 86</span></a>    <span class="k">def</span> <span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="KafkaSink-86"><a href="#KafkaSink-86"><span class="linenos"> 86</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="KafkaSink-87"><a href="#KafkaSink-87"><span class="linenos"> 87</span></a>        <span class="bp">self</span><span class="o">.</span><span class="n">_inside_context</span> <span class="o">=</span> <span class="kc">True</span>
 </span><span id="KafkaSink-88"><a href="#KafkaSink-88"><span class="linenos"> 88</span></a>        <span class="k">if</span> <span class="n">config_state</span><span class="o">.</span><span class="n">RUN_MODE</span> <span class="o">==</span> <span class="n">RunMode</span><span class="o">.</span><span class="n">WRITE</span><span class="p">:</span>
 </span><span id="KafkaSink-89"><a href="#KafkaSink-89"><span class="linenos"> 89</span></a>            <span class="n">producer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_producer</span><span class="p">()</span>
@@ -970,7 +970,7 @@
 </span><span id="KafkaSink-95"><a href="#KafkaSink-95"><span class="linenos"> 95</span></a>                <span class="k">else</span><span class="p">:</span>
 </span><span id="KafkaSink-96"><a href="#KafkaSink-96"><span class="linenos"> 96</span></a>                    <span class="k">raise</span> <span class="n">exc</span>
 </span><span id="KafkaSink-97"><a href="#KafkaSink-97"><span class="linenos"> 97</span></a>
-</span><span id="KafkaSink-98"><a href="#KafkaSink-98"><span class="linenos"> 98</span></a>    <span class="k">def</span> <span class="fm">__exit__</span><span class="p">(</span>
+</span><span id="KafkaSink-98"><a href="#KafkaSink-98"><span class="linenos"> 98</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span>
 </span><span id="KafkaSink-99"><a href="#KafkaSink-99"><span class="linenos"> 99</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="KafkaSink-100"><a href="#KafkaSink-100"><span class="linenos">100</span></a>        <span class="n">exc_type</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="ne">BaseException</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
 </span><span id="KafkaSink-101"><a href="#KafkaSink-101"><span class="linenos">101</span></a>        <span class="n">exc_value</span><span class="p">:</span> <span class="ne">BaseException</span> <span class="o">|</span> <span class="kc">None</span><span class="p">,</span>
@@ -1003,14 +1003,14 @@
 </span><span id="KafkaSink-128"><a href="#KafkaSink-128"><span class="linenos">128</span></a>                    <span class="k">raise</span> <span class="n">exc</span>
 </span><span id="KafkaSink-129"><a href="#KafkaSink-129"><span class="linenos">129</span></a>        <span class="k">return</span> <span class="kc">True</span>
 </span><span id="KafkaSink-130"><a href="#KafkaSink-130"><span class="linenos">130</span></a>
-</span><span id="KafkaSink-131"><a href="#KafkaSink-131"><span class="linenos">131</span></a>    <span class="k">def</span> <span class="nf">_batch_worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">,</span> <span class="n">producer</span><span class="p">:</span> <span class="n">Producer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="KafkaSink-131"><a href="#KafkaSink-131"><span class="linenos">131</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">_batch_worker</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">,</span> <span class="n">producer</span><span class="p">:</span> <span class="n">Producer</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
 </span><span id="KafkaSink-132"><a href="#KafkaSink-132"><span class="linenos">132</span></a>        <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="n">batch</span><span class="o">.</span><span class="n">records</span><span class="p">:</span>
 </span><span id="KafkaSink-133"><a href="#KafkaSink-133"><span class="linenos">133</span></a>            <span class="n">message_json</span> <span class="o">=</span> <span class="n">_record_to_kafka_message_value</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
 </span><span id="KafkaSink-134"><a href="#KafkaSink-134"><span class="linenos">134</span></a>            <span class="n">producer</span><span class="o">.</span><span class="n">produce</span><span class="p">(</span>
 </span><span id="KafkaSink-135"><a href="#KafkaSink-135"><span class="linenos">135</span></a>                <span class="bp">self</span><span class="o">.</span><span class="n">topic</span><span class="p">,</span> <span class="n">message_json</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_message_key</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">,</span> <span class="n">record</span><span class="p">)</span>
 </span><span id="KafkaSink-136"><a href="#KafkaSink-136"><span class="linenos">136</span></a>            <span class="p">)</span>
 </span><span id="KafkaSink-137"><a href="#KafkaSink-137"><span class="linenos">137</span></a>
-</span><span id="KafkaSink-138"><a href="#KafkaSink-138"><span class="linenos">138</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+</span><span id="KafkaSink-138"><a href="#KafkaSink-138"><span class="linenos">138</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="KafkaSink-139"><a href="#KafkaSink-139"><span class="linenos">139</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="KafkaSink-140"><a href="#KafkaSink-140"><span class="linenos">140</span></a><span class="sd">        Produces one kafka message per record in the Batch.</span>
 </span><span id="KafkaSink-141"><a href="#KafkaSink-141"><span class="linenos">141</span></a><span class="sd">        Blocks until all messages have been flushed.</span>
@@ -1046,7 +1046,7 @@
 
     </div>
     <a class="headerlink" href="#KafkaSink.__init__"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="KafkaSink.__init__-37"><a href="#KafkaSink.__init__-37"><span class="linenos">37</span></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="KafkaSink.__init__-37"><a href="#KafkaSink.__init__-37"><span class="linenos">37</span></a>    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span>
 </span><span id="KafkaSink.__init__-38"><a href="#KafkaSink.__init__-38"><span class="linenos">38</span></a>        <span class="bp">self</span><span class="p">,</span>
 </span><span id="KafkaSink.__init__-39"><a href="#KafkaSink.__init__-39"><span class="linenos">39</span></a>        <span class="n">bootstrap_servers</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
 </span><span id="KafkaSink.__init__-40"><a href="#KafkaSink.__init__-40"><span class="linenos">40</span></a>        <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
@@ -1113,7 +1113,7 @@
 
     </div>
     <a class="headerlink" href="#KafkaSink.process_batch"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="KafkaSink.process_batch-138"><a href="#KafkaSink.process_batch-138"><span class="linenos">138</span></a>    <span class="k">def</span> <span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="KafkaSink.process_batch-138"><a href="#KafkaSink.process_batch-138"><span class="linenos">138</span></a>    <span class="k">def</span><span class="w"> </span><span class="nf">process_batch</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">batch</span><span class="p">:</span> <span class="n">Batch</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Batch</span><span class="p">:</span>
 </span><span id="KafkaSink.process_batch-139"><a href="#KafkaSink.process_batch-139"><span class="linenos">139</span></a><span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 </span><span id="KafkaSink.process_batch-140"><a href="#KafkaSink.process_batch-140"><span class="linenos">140</span></a><span class="sd">        Produces one kafka message per record in the Batch.</span>
 </span><span id="KafkaSink.process_batch-141"><a href="#KafkaSink.process_batch-141"><span class="linenos">141</span></a><span class="sd">        Blocks until all messages have been flushed.</span>
